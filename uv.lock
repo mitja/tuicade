@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11, <4.0"
 
 [[package]]
@@ -193,6 +193,9 @@ wheels = [
 [[package]]
 name = "tuicade"
 source = { editable = "." }
+dependencies = [
+    { name = "rich" },
+]
 
 [package.dev-dependencies]
 dev = [
@@ -201,11 +204,11 @@ dev = [
     { name = "funlog" },
     { name = "pytest" },
     { name = "pytest-sugar" },
-    { name = "rich" },
     { name = "ruff" },
 ]
 
 [package.metadata]
+requires-dist = [{ name = "rich", specifier = "==15.0.0" }]
 
 [package.metadata.requires-dev]
 dev = [
@@ -214,6 +217,5 @@ dev = [
     { name = "funlog", specifier = "==0.2.1" },
     { name = "pytest", specifier = "==9.0.3" },
     { name = "pytest-sugar", specifier = "==1.1.1" },
-    { name = "rich", specifier = "==15.0.0" },
     { name = "ruff", specifier = "==0.15.11" },
 ]

@@ -39,6 +39,7 @@ classifiers = [
 # ---- Main dependencies ----
 
 dependencies = [
+    "rich==15.0.0",
 ]
 
 
@@ -50,7 +51,6 @@ dev = [
     "pytest-sugar==1.1.1",
     "ruff==0.15.11",
     "codespell==2.4.2",
-    "rich==15.0.0",
     "basedpyright==1.39.3",
     "funlog==0.2.1",
 ]
@@ -143,6 +143,7 @@ reportUnnecessaryTypeIgnoreComment = false
 # A few typically noisy warnings are next.
 # How many you enable is up to you. The first few are off by default, but you can
 # comment/uncomment these as desired:
+reportImportCycles = false
 reportMissingTypeStubs = false
 reportUnusedCallResult = false
 reportAny = false
@@ -154,7 +155,8 @@ reportUnreachable = false
 # reportMissingImports = false
 # reportUnnecessaryIsInstance = false
 # reportUnknownVariableType = false
-# reportUnknownArgumentType = false
+reportUnknownArgumentType = false
+reportUnknownLambdaType = false
 
 [tool.codespell]
 # Add here as needed:
