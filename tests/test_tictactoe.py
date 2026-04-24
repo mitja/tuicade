@@ -5,6 +5,8 @@ import random
 import pytest
 
 from tuicade.games.tictactoe import (
+    Board,
+    Cell,
     apply_move,
     available_moves,
     check_winner,
@@ -16,9 +18,15 @@ from tuicade.games.tictactoe import (
 # ---------------------------------------------------------------------------
 
 
-def _board(s: str) -> list:
+def _board(s: str) -> Board:
     """Build a Board from a 9-char string of X, O, or space."""
-    return list(s)
+    return [_cell(ch) for ch in s]
+
+
+def _cell(ch: str) -> Cell:
+    if ch not in ("X", "O", " "):
+        raise ValueError(f"invalid cell: {ch!r}")
+    return ch  # type: ignore[return-value]
 
 
 @pytest.mark.parametrize(
@@ -49,7 +57,7 @@ def _board(s: str) -> list:
         ("         ", None),
     ],
 )
-def test_check_winner(layout: str, expected):
+def test_check_winner(layout: str, expected: Cell | None):
     board = _board(layout)
     assert check_winner(board) == expected
 
