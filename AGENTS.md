@@ -1,7 +1,7 @@
 # Agent instructions
 
 tuicade is a small terminal arcade with simple games, 
-built to demonstrate **parallel agent sessions**.
+built to demonstrate parallel agent sessions.
 
 - Read the Makefile.
 - Use `make` to install and lint and test.
