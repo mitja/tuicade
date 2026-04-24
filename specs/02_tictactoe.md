@@ -6,6 +6,9 @@
 
 **Parallel-safe:** Yes. Touches only the two files below.
 
+**Dependencies:** use `rich==15.0.0` (already pinned in `pyproject.toml`
+by spec 00). Do not add new dependencies.
+
 ## Goal
 
 Add a human-vs-computer Tic-Tac-Toe that plugs into the launcher.

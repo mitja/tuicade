@@ -6,6 +6,9 @@
 
 **Parallel-safe:** Yes. Touches only the two files below.
 
+**Dependencies:** use `rich==15.0.0` (already pinned in `pyproject.toml`
+by spec 00) for coloured output. Do not add new dependencies.
+
 ## Goal
 
 Add a Word Scramble game whose word pool is AI-engineering vocabulary.

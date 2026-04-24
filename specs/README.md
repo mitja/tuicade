@@ -29,6 +29,10 @@ games via `pkgutil.iter_modules`, so adding a game never edits launcher code.
 
 ## Design choices that make parallel sessions safe
 
+- All dependencies — including `rich==15.0.0` — are pinned in
+  `pyproject.toml` and locked in `uv.lock`. `make install` runs
+  `uv sync --locked`, so every parallel session gets the exact same
+  versions. Specs must not add new dependencies.
 - Locked the `Game` contract (slug, title, description, run) in spec 00 and
   referenced it verbatim from every game spec — eliminates ambiguity when
   parallel agents decide field names.

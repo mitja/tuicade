@@ -29,7 +29,9 @@ Create:
 
 Edit:
 - `pyproject.toml` — move `rich` from the `dev` dependency-group into
-  `[project].dependencies` so it's a runtime dep.
+  `[project].dependencies`, keeping the exact pin: `rich==15.0.0`. After
+  editing, re-run `uv lock` so `uv.lock` picks up the dependency-group
+  change, and commit the updated `uv.lock` alongside `pyproject.toml`.
 - `src/tuicade/tuicade.py` — replace the empty `main()` with a thin wrapper
   that calls the launcher.
 - `src/tuicade/__init__.py` — export `main` and `Game` for public use.

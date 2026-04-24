@@ -35,7 +35,8 @@ coordination overhead.
   expose a module-level `GAME`).
 - Only edit the two files listed in your sub-spec. Do not touch
   `launcher.py`, `pyproject.toml`, or any other game's files.
-- Use `rich` for any colored or panelled output.
+- Use `rich==15.0.0` (already pinned in `pyproject.toml`) for any coloured
+  or panelled output. Do not add new dependencies.
 - Include `q` as a quit-to-launcher shortcut inside the game loop.
 - Tests cover pure logic only, not interactive loops.
 - Accept a seeded `random.Random` where randomness matters, so tests are

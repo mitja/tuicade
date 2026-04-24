@@ -8,6 +8,9 @@ dataclass, the `tuicade.games` package, and the launcher exist.
 **Parallel-safe:** Yes. This spec only creates two files; no other spec
 touches them.
 
+**Dependencies:** use `rich==15.0.0` (already pinned in `pyproject.toml`
+by spec 00). Do not add new dependencies.
+
 ## Goal
 
 Add a Hangman game that plugs into the launcher via the shared `Game`
