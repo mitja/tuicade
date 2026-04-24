@@ -17,7 +17,11 @@ def _make_game(slug: str = "stub") -> Game:
     )
 
 
-def test_discover_games_empty() -> None:
+def test_discover_games_empty(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(
+        "tuicade.launcher.pkgutil.iter_modules",
+        lambda *_args, **_kwargs: iter([]),
+    )
     assert discover_games() == []
 
 
