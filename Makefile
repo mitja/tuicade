@@ -9,7 +9,7 @@
 default: install lint test 
 
 install:
-	uv sync --all-extras
+	uv sync --all-extras --locked
 
 lint:
 	uv run python devtools/lint.py
